@@ -66,10 +66,18 @@ Page
             Row
             {
                 anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width-50
                 Button
                 {
                     text: "Probe"
                     onClicked: pageStack.push(Qt.resolvedUrl("Probe.qml"), {deviceName: devname.value})
+                }
+
+                Rectangle
+                {
+                    color: "transparent"
+                    height: 1
+                    width: 10
                 }
 
                 Button
@@ -78,15 +86,37 @@ Page
                     onClicked: pageStack.push(Qt.resolvedUrl("ReaderWriter.qml"), {deviceName: devname.value})
                 }
             }
-            Button
+            Row
             {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "TOH EEPROM"
-                onClicked:
+                width: parent.width-50
+                Button
                 {
-                    pageStack.push(Qt.resolvedUrl("TohEeprom.qml"), {deviceName: "/dev/i2c-1"})
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    text: "TOH EEPROM"
+                    onClicked:
+                    {
+                        pageStack.push(Qt.resolvedUrl("TohEeprom.qml"), {deviceName: "/dev/i2c-1"})
+                    }
                 }
-            }
+
+                Rectangle
+                {
+                    color: "transparent"
+                    height: 1
+                    width: 10
+                }
+
+                Button
+                {
+                    //anchors.horizontalCenter: parent.horizontalCenter
+                    text: "TOH Board Test"
+                    onClicked:
+                    {
+                        pageStack.push(Qt.resolvedUrl("TestWriter.qml"), {deviceName: devname.value})
+                    }
+                }
+             }
 
             Rectangle
             {
@@ -143,9 +173,7 @@ Page
                         running: openingUsersGuide
                     }
                 }
-
             }
-
         }
     }
 

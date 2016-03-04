@@ -14,7 +14,7 @@ usersguide.files = i2ctool-ug.pdf
 INSTALLS += usersguide
 
 SOURCES += src/i2ctool.cpp \
-	src/i2cif.cpp \
+    src/i2cif.cpp \
     src/conv.cpp
 	
 HEADERS += src/i2cif.h \
@@ -34,5 +34,5 @@ OTHER_FILES += qml/i2ctool.qml \
     qml/icon-off.png \
     qml/pages/EditHeaderEntry.qml \
     qml/pages/TohEepromCfgEdit.qml \
+    qml/pages/TestWriter.qml \
     i2ctool-ug.pdf
-
